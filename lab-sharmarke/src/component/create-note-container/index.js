@@ -1,10 +1,15 @@
 import React from 'react';
+import uuid from 'uuid/v1';
+
 
 class NoteCreateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      content: ''
+      content: '',
+      id: uuid(),
+      editing: false,
+      completed: false,
     }
 
     this.handleChange = this.handleChange.bind(this);
