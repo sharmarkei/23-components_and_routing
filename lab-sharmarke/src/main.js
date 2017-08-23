@@ -4,7 +4,11 @@ import React from 'react';
 import ReactDom from 'react-dom';
 import {BrowserRouter, Route} from 'react-router-dom';
 
-import NoteCreateForm from './component/create-note-container'
+import NoteContainer from './component/note-container'
+import NoteCreateForm from './component/note-create-form'
+import NoteItem from './component/note-item'
+import NoteList from './component/note-list'
+
 
 class App extends React.Component {
   constructor(props) {
@@ -31,9 +35,11 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <Route exact path='/create' component={() => <NoteCreateForm app={this.liftApp()} />} />
+            <Route exact path='/' component={() => <NoteContainer app={this.liftApp()} />} />
           </section>
         </BrowserRouter>
+        <NoteList notes={this.state.notes} noteRemove={this.noteRemove}/>
+
       </main>
     )
   }
