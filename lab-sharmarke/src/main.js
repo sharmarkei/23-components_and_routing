@@ -35,7 +35,7 @@ class App extends React.Component {
       <main>
         <BrowserRouter>
           <section>
-            <Route exact path='/' component={() => <NoteContainer app={this.liftApp()} />} />
+            <Route exact path='/create' component={() => <NoteContainer app={this.liftApp()} />} />
           </section>
         </BrowserRouter>
         <NoteList notes={this.state.notes} noteRemove={this.noteRemove}/>

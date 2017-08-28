@@ -19,7 +19,7 @@ class NoteContainer extends React.Component {
   render(){
     return (
       <div className='note-container'>
-        <NoteCreateForm handleNoteCreate={this.noteCreate} />
+        <NoteCreateForm handleCreateNote={this.noteCreate} />
       </div>
     )
   }
